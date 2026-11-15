@@ -1,0 +1,51 @@
+{
+  "version": "v1",
+  "descriptors": {
+    "station": {
+      "kind": "element",
+      "bitWidth": 8,
+      "scale": 0,
+      "reference": 0
+    },
+    "sensorCount": {
+      "kind": "element",
+      "bitWidth": 3,
+      "scale": 0,
+      "reference": 0
+    },
+    "temp": {
+      "kind": "element",
+      "bitWidth": 12,
+      "scale": 1,
+      "reference": -500
+    },
+    "humidity": {
+      "kind": "element",
+      "bitWidth": 7,
+      "scale": 0,
+      "reference": 0
+    },
+    "sensors": {
+      "kind": "replication",
+      "factor": "sensorCount",
+      "members": [
+        "temp",
+        "humidity"
+      ]
+    },
+    "stationBlock": {
+      "kind": "sequence",
+      "members": [
+        "station",
+        "sensors"
+      ]
+    },
+    "scaledTemp": {
+      "kind": "operator",
+      "scaleDelta": 1,
+      "members": [
+        "temp"
+      ]
+    }
+  }
+}

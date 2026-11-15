@@ -1,0 +1,9 @@
+{
+  "name": "环境观测交换流的描述符展开与缺测资料采集",
+  "probe": "/bulletins",
+  "identityFields": [
+    "station",
+    "tableVersion",
+    "sensor"
+  ]
+}
